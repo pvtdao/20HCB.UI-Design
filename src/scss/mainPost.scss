@@ -1,0 +1,43 @@
+.mainPost {
+  &__img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    height: 300px;
+  }
+  &__info {
+    margin-top: 10px;
+
+    &-location,
+    &-day {
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+
+    &-day {
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.4);
+    }
+    &-img {
+      width: 80px;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    color: #393939;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 5px;
+  }
+
+  &__shortDes {
+    font-size: 14px;
+    color: #39393999;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
