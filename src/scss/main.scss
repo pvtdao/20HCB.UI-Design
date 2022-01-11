@@ -3,6 +3,8 @@
 @import './header.scss';
 @import './mainPost.scss';
 @import './subPost.scss';
+@import './commonPost.scss';
+@import './footer.scss';
 
 * {
   font-family: 'Montserrat', sans-serif;
@@ -21,4 +23,8 @@
 
 .bdr-none {
   border-radius: unset;
+}
+
+.mt-4-5 {
+  margin-top: 35px;
 }

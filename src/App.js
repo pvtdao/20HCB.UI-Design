@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/main.scss';
 import { Container } from 'reactstrap';
 import NewPost from './components/Post/NewPost';
+import TopCategory from './components/Post/TopCategory';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <Header />
       <Introduce />
       <NewPost />
+      <TopCategory />
+      <Footer />
     </div>
   );
 }

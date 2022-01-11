@@ -1,0 +1,37 @@
+.commonPost {
+  &__img {
+    height: 170px;
+    width: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+
+    border-radius: 8px;
+  }
+
+  &__title {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__info {
+    font-size: 12px;
+
+    &-time {
+      margin: 0;
+    }
+
+    &-img {
+      height: 30px;
+      width: 50px;
+    }
+  }
+}
