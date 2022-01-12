@@ -5,6 +5,7 @@
 @import './subPost.scss';
 @import './commonPost.scss';
 @import './footer.scss';
+@import './detail.scss';
 
 * {
   font-family: 'Montserrat', sans-serif;
@@ -15,6 +16,12 @@
 }
 .mr-1 {
   margin-right: 8px;
+}
+.mr-2 {
+  margin-right: 16px;
+}
+.mr-3 {
+  margin-right: 24px;
 }
 
 .pd-1 {

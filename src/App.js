@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
+import Detail from './components/Detail';
 import Footer from './components/Footer';
 import Header from './components/Header/Header';
 import SubHeader from './components/Header/SubHeader';
@@ -28,6 +29,7 @@ function App() {
         <Route path='/' element={<HomePage />} />
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/detail/:newsSlug' element={<Detail />} />
       </Routes>
       <Routes></Routes>
 

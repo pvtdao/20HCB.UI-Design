@@ -1,0 +1,52 @@
+.detail {
+  &__title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    font-weight: 600;
+  }
+
+  &__shortDes {
+    font-weight: 500;
+  }
+
+  &__author {
+    font-weight: 600;
+  }
+
+  &__main {
+    width: 100%;
+  }
+}
+
+.comment {
+  &__title {
+    font-weight: 600;
+  }
+
+  &__ava {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+
+  &__user,
+  &__content,
+  &__time {
+    margin: 0;
+  }
+
+  &__user {
+    font-weight: 600;
+  }
+
+  &__content {
+    line-height: 1.3;
+  }
+
+  &__time {
+    margin-top: 5px;
+  }
+}
