@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
+import Category from './components/Categorry';
 import Detail from './components/Detail';
 import Footer from './components/Footer';
 import Header from './components/Header/Header';
@@ -30,8 +31,8 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/detail/:newsSlug' element={<Detail />} />
+        <Route path='/category/:categorySlug' element={<Category />} />
       </Routes>
-      <Routes></Routes>
 
       {location.pathname === '/register' || location.pathname === '/login' ? (
         ''
