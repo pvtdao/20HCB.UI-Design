@@ -3,10 +3,16 @@ import { Container, Button, Input, InputGroup } from 'reactstrap';
 import printDate from '../../uitl/printDate';
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom'
 
 function SubHeader(props) {
   const todayTime = new Date()
   const todayString = printDate(todayTime)
+  const navigate = useNavigate()
+
+  const directLogin = () => {
+    navigate('/login')
+  }
 
   return (
     <div className='subHeader'>
@@ -16,7 +22,7 @@ function SubHeader(props) {
             {todayString}
           </div>
           <div className="subHeader__action d-flex align-items-center">
-            <Button color='light' className='btn-sm ml-1'>
+            <Button color='light' className='btn-sm ml-1' onClick={directLogin}>
               Đăng nhập
             </Button>
             <div className='subHeader__action-inputGroup'>

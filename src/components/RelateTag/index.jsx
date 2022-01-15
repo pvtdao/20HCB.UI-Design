@@ -1,7 +1,7 @@
 import React from 'react';
 import { Badge, Col, Row } from 'reactstrap';
 
-function RelateTag(props) {
+function RelateTag({ relateTag }) {
     return (
         <div className='relateTag'>
             <div className='border-bottom mb-3'>
@@ -11,26 +11,13 @@ function RelateTag(props) {
             </div>
 
             <Row className='mb-3'>
-                <Col xs={3}>
-                    <Badge className='pd-1'>
-                        Khoa học
-                    </Badge>
-                </Col>
-                <Col xs={3}>
-                    <Badge className='pd-1'>
-                        Đời sống
-                    </Badge>
-                </Col>
-                <Col xs={3}>
-                    <Badge className='pd-1'>
-                        Thể thao
-                    </Badge>
-                </Col>
-                <Col xs={3}>
-                    <Badge className='pd-1'>
-                        Dân trí
-                    </Badge>
-                </Col>
+                {relateTag.map(tag =>
+                    <Col xs={3} key={tag.value}>
+                        <Badge className='pd-1'>
+                            {tag.label}
+                        </Badge>
+                    </Col>
+                )}
             </Row>
         </div>
     );

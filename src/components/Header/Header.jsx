@@ -6,8 +6,10 @@ import {
   NavLink,
   UncontrolledDropdown
 } from 'reactstrap';
+import { category } from "../../fakeData/category"
 
 function Header(props) {
+  console.log(category.slice(1, 10))
   return (
     <header className='header'>
       <Container >
@@ -23,37 +25,17 @@ function Header(props) {
                   />
                 </div>
               </NavbarBrand>
+
               <NavbarToggler onClick={function noRefCheck() { }} />
               <Collapse navbar>
                 <Nav className='me-auto' navbar>
-                  <NavItem>
-                    <NavLink href='/thoisu/'>Thời sự</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink href='/thegioi/'>Thế giới</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink href='/kinhdoanh/'>Kinh doanh</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink href='/thethao/'>Thể thao</NavLink>
-                  </NavItem>
-
-                  <NavItem>
-                    <NavLink href='/congnghe/'>Công nghệ</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink href='/khoahoc/'>Khoa học</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink href='/suckhoe/'>Sức khỏe</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink href='/giaitri/'>Giải trí</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink href='/dulich/'>Du lịch</NavLink>
-                  </NavItem>
+                  {category.slice(1, 10).map(cate => {
+                    return (
+                      <NavItem key={cate.id}>
+                        <NavLink href={`/category/${cate.name}`}>{cate.name}</NavLink>
+                      </NavItem>
+                    )
+                  })}
                   {/* <NavItem>
                     <NavLink href='https://github.com/reactstrap/reactstrap'>
                       GitHub

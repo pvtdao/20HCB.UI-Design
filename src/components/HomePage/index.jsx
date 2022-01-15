@@ -3,12 +3,12 @@ import Introduce from '../Introduce';
 import NewPost from '../Post/NewPost';
 import TopCategory from '../Post/TopCategory';
 
-function HomePage(props) {
+function HomePage({ news = {} }) {
     return (
         <div>
-            <Introduce />
-            <NewPost />
-            <TopCategory />
+            <Introduce news={news} />
+            <NewPost news={news} />
+            <TopCategory news={news} />
         </div>
     );
 }

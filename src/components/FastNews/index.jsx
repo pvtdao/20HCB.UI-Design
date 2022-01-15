@@ -1,7 +1,7 @@
 import React from 'react';
 import { Badge, Col, Row } from 'reactstrap';
 import SubPost2 from '../Post/SubPost2';
-
+import { fastNews } from '../../fakeData/news'
 function FastNews(props) {
   return (
     <div className='fastNews'>
@@ -11,31 +11,13 @@ function FastNews(props) {
         </Badge>
       </div>
 
-      <Row className='mb-3'>
-        <Col xs={12}>
-          <SubPost2 />
-        </Col>
-      </Row>
-      <Row className='mb-3'>
-        <Col xs={12}>
-          <SubPost2 />
-        </Col>
-      </Row>
-      <Row className='mb-3'>
-        <Col xs={12}>
-          <SubPost2 />
-        </Col>
-      </Row>
-      <Row className='mb-3'>
-        <Col xs={12}>
-          <SubPost2 />
-        </Col>
-      </Row>
-      <Row className='mb-3'>
-        <Col xs={12}>
-          <SubPost2 />
-        </Col>
-      </Row>
+      {fastNews.map(item => {
+        return <Row className='mb-3' key={item.slug}>
+          <Col xs={12}>
+            <SubPost2 news={item} />
+          </Col>
+        </Row>
+      })}
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Badge, Col, Container, Row } from 'reactstrap';
 import CommonPost from './CommonPost';
+import { newPost } from '../../fakeData/news'
 
 function NewPost(props) {
     return (
@@ -16,34 +17,15 @@ function NewPost(props) {
                     </Col>
                 </Row>
                 <Row>
-                    <Col lg={3} className='mt-4-5'>
-                        <CommonPost />
-                    </Col>
-                    <Col lg={3} className='mt-4-5'>
-                        <CommonPost />
-                    </Col>
-                    <Col lg={3} className='mt-4-5'>
-                        <CommonPost />
-                    </Col>
-                    <Col lg={3} className='mt-4-5'>
-                        <CommonPost />
-                    </Col>
-                    <Col lg={3} className='mt-4-5'>
-                        <CommonPost />
-                    </Col>
-                    <Col lg={3} className='mt-4-5'>
-                        <CommonPost />
-                    </Col>
-                    <Col lg={3} className='mt-4-5'>
-                        <CommonPost />
-                    </Col>
-                    <Col lg={3} className='mt-4-5'>
-                        <CommonPost />
-                    </Col>
-
+                    {newPost.map(item => {
+                        return (
+                            <Col lg={3} className='mt-4-5' key={item.slug}>
+                                <CommonPost news={item} />
+                            </Col>
+                        )
+                    })}
                 </Row>
             </Container>
-
         </div>
     );
 }

@@ -10,11 +10,14 @@ import HomePage from './components/HomePage';
 import Login from './components/Login';
 import Register from './components/Resgiter';
 import './scss/main.scss';
+import { news } from './fakeData/news';
+import { category } from './fakeData/category';
 
 function App() {
   const location = useLocation();
 
-  console.log('location: ', location);
+  const newsData = news;
+
   return (
     <div className='App'>
       {location.pathname === '/register' || location.pathname === '/login' ? (
@@ -27,11 +30,14 @@ function App() {
       )}
 
       <Routes>
-        <Route path='/' element={<HomePage />} />
+        <Route path='/' element={<HomePage news={newsData} />} />
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/detail/:newsSlug' element={<Detail />} />
-        <Route path='/category/:categorySlug' element={<Category />} />
+        <Route
+          path='/category/:categorySlug'
+          element={<Category category={category} />}
+        />
       </Routes>
 
       {location.pathname === '/register' || location.pathname === '/login' ? (

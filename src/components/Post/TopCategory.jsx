@@ -2,10 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Badge, Col, Container, Row } from 'reactstrap';
 import CommonPost from './CommonPost';
+import { topCateNews } from '../../fakeData/news'
 
-TopCategory.propTypes = {
-
-};
 
 function TopCategory(props) {
     return (
@@ -21,31 +19,15 @@ function TopCategory(props) {
                     </Col>
                 </Row>
                 <Row>
-                    <Col lg={3} className='mt-4-5'>
-                        <CommonPost />
-                    </Col>
-                    <Col lg={3} className='mt-4-5'>
-                        <CommonPost />
-                    </Col>
-                    <Col lg={3} className='mt-4-5'>
-                        <CommonPost />
-                    </Col>
-                    <Col lg={3} className='mt-4-5'>
-                        <CommonPost />
-                    </Col>
-                    <Col lg={3} className='mt-4-5'>
-                        <CommonPost />
-                    </Col>
-                    <Col lg={3} className='mt-4-5'>
-                        <CommonPost />
-                    </Col>
-                    <Col lg={3} className='mt-4-5'>
-                        <CommonPost />
-                    </Col>
-                    <Col lg={3} className='mt-4-5'>
-                        <CommonPost />
-                    </Col>
-
+                    <Row>
+                        {topCateNews.map(item => {
+                            return (
+                                <Col lg={3} className='mt-4-5' key={item.slug}>
+                                    <CommonPost news={item} />
+                                </Col>
+                            )
+                        })}
+                    </Row>
                 </Row>
             </Container>
         </div>
