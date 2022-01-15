@@ -1,0 +1,151 @@
+.login {
+  &__container {
+    min-height: 100vh;
+    overflow: auto;
+    resize: both;
+    display: flex;
+  }
+
+  &__left {
+    min-width: 50vw;
+    // background-color: yellow;
+    @media screen and (max-width: 768px) {
+      min-width: 100vw;
+    }
+  }
+
+  &__right {
+    min-width: 50vw;
+    background-color: #42a7c3;
+    @media screen and (max-width: 768px) {
+      min-width: 0vw;
+    }
+  }
+
+  &__containerLeft {
+    position: relative;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 1;
+    box-sizing: border-box;
+    // background-color: skyblue;
+    margin: auto;
+  }
+  &__elementLeft {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 90%;
+    height: 483px;
+    box-sizing: border-box;
+    //  background-color: red;
+  }
+
+  &__logoLeft {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &__titleLeft {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 700;
+  }
+  &__formLeft {
+    width: 60%;
+    max-width: 550px;
+    min-width: 300px;
+    margin-top: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &__buttonLeft {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  &__registerLeft {
+    text-decoration: none;
+  }
+
+  &__subTitleLeft {
+    width: 60%;
+    max-width: 550px;
+    min-width: 300px;
+    padding-top: 20px;
+    float: initial;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    border-bottom: 1px solid gainsboro;
+    color: grey;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__subTitleTextLeft {
+    background: white;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  &__containerSocial {
+    width: 60%;
+    max-width: 550px;
+    min-width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: red;
+  }
+  &__containerRight {
+    position: relative;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 1;
+    box-sizing: border-box;
+    // background-color: skyblue;
+    margin: auto;
+  }
+  &__elememtRight {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 90%;
+    height: 80%;
+    background-image: url(../images/img_sub_photo_login.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &__password-icon{
+    position: absolute;
+    right:5px;
+    z-index: 999999;
+    top:15px;
+    cursor: pointer;
+  }
+  &__buttonGoogle{
+    &:hover{
+      background-color: #db4a38;
+    }
+  }
+  &__buttonFaceBook{
+    &:hover{
+      background-color: #4267b2;
+    }
+  }
+  &__inputPassword{
+  }
+}
