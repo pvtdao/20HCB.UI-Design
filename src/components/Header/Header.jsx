@@ -20,7 +20,7 @@ function Header(props) {
               <NavbarBrand href='/'>
                 <div className='header__logo'>
                   <img
-                    src='https://wildaid.org/wp-content/uploads/2020/08/NBC.png'
+                    src='https://seeklogo.com/images/N/nbc-news-logo-EDDBA8ADC9-seeklogo.com.png'
                     alt='logo'
                   />
                 </div>
@@ -32,7 +32,7 @@ function Header(props) {
                   {category.slice(1, 10).map(cate => {
                     return (
                       <NavItem key={cate.id}>
-                        <NavLink href={`/category/${cate.name}`}>{cate.name}</NavLink>
+                        <NavLink href={`/category/${cate.name}`} className='color-black fw-500'>{cate.name}</NavLink>
                       </NavItem>
                     )
                   })}

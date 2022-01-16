@@ -33,7 +33,7 @@ function Category({ category }) {
                                     )
                                 })}
 
-                                <Row className='mt-5'>
+                                {/* <Row className='mt-5'>
                                     <Pagination>
                                         <PaginationItem>
                                             <PaginationLink
@@ -85,7 +85,7 @@ function Category({ category }) {
                                             />
                                         </PaginationItem>
                                     </Pagination>
-                                </Row>
+                                </Row> */}
                             </>
                         }
 

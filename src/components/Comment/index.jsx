@@ -9,9 +9,12 @@ function Comment({ comment }) {
                     <img className='comment__ava mt-1' src="https://toppng.com/uploads/preview/roger-berry-avatar-placeholder-11562991561rbrfzlng6h.png" alt="avatar" />
                 </Col>
                 <Col lg={11}>
-                    <p className='comment__user'>{comment.userName}</p>
+                    <div className="d-flex align-items-center">
+                        <p className='comment__user mr-3'>{comment.userName}</p>
+                        <p className="comment__time">14:39 20/12</p>
+                    </div>
+
                     <p className='comment__content'>{comment.commentText}</p>
-                    <p className="comment__time">14:39 20/12</p>
                 </Col>
             </Row>
         </div >

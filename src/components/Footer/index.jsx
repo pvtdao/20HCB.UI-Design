@@ -2,12 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Container, Row } from 'reactstrap';
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
-
-Footer.propTypes = {
-
-};
-
+import { category } from '../../fakeData/category'
+import { useNavigate } from 'react-router-dom';
 function Footer(props) {
+    const navigate = useNavigate()
+
+    const directCategory = (name) => {
+        console.log("cccasd")
+        navigate(`/category/${name}`)
+    }
     return (
         <div className='footer'>
             <Container>
@@ -25,20 +28,16 @@ function Footer(props) {
                         <Row className="footer__col-2">
                             <Col lg={6}>
                                 <div className="d-flex flex-column footer__col-2-2">
-                                    <p>Thời sự</p>
-                                    <p>Góc nhìn</p>
-                                    <p>Thế giới</p>
-                                    <p>Giáo dục</p>
-                                    <p>Đời sống</p>
+                                    {category.slice(1, 6).map(cate => <p key={cate.id} style={{ cursor: 'pointer' }} onClick={() => directCategory(cate.name)}>{cate.name}</p>)}
+
                                 </div>
                             </Col>
                             <Col lg={6}>
                                 <div className="d-flex flex-column footer__col-2-2">
-                                    <p>Du lịch</p>
-                                    <p>Khoa học</p>
-                                    <p>Số hóa</p>
-                                    <p>Pháp luật</p>
-                                    <p>Thể thao</p>
+                                    <div className="d-flex flex-column footer__col-2-2">
+                                        {category.slice(6, 11).map(cate => <p key={cate.id} style={{ cursor: 'pointer' }} onClick={() => directCategory(cate.name)}>{cate.name}</p>)}
+
+                                    </div>
                                 </div>
                             </Col>
                         </Row>
@@ -48,7 +47,7 @@ function Footer(props) {
                             <Col lg={4}>
                                 <div className="d-flex flex-column footer__col-3-2">
                                     <div className='flex-fill d-flex justify-content-start'>
-                                        <img className="footer__col-3-img" src="https://wildaid.org/wp-content/uploads/2020/08/NBC.png" alt='logo post' />
+                                        <img className="footer__col-3-img" src="https://seeklogo.com/images/N/nbc-news-logo-EDDBA8ADC9-seeklogo.com.png" alt='logo post' />
                                     </div>
                                 </div>
                             </Col>

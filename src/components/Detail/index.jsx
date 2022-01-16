@@ -20,11 +20,11 @@ function Detail(props) {
                 <Breadcrumb>
                   <BreadcrumbItem>
                     <a href="/#">
-                      Kinh doanh
+                      Pháp Luật
                     </a>
                   </BreadcrumbItem>
                   <BreadcrumbItem active>
-                    Bất động sản
+                    Đời sống
                   </BreadcrumbItem>
                 </Breadcrumb>
               </Col>
@@ -70,11 +70,7 @@ function Detail(props) {
               </Col>
             </Row>
 
-            <Row>
-              <Col>
-                <Button>Tải xuống</Button>
-              </Col>
-            </Row>
+
 
             <Row className='mt-4'>
               <Col>

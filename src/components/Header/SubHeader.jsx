@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Button, Input, InputGroup } from 'reactstrap';
+import { Container, Button, Input, InputGroup, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import printDate from '../../uitl/printDate';
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
@@ -13,7 +13,19 @@ function SubHeader(props) {
   const directLogin = () => {
     navigate('/login')
   }
+  const logged = localStorage.getItem("isLoggedIn") || false
 
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false)
+
+  React.useEffect(() => {
+    setIsLoggedIn(logged)
+  }, [logged])
+
+
+  const handleLogOut = () => {
+    setIsLoggedIn(false)
+    localStorage.setItem("isLoggedIn", false)
+  }
   return (
     <div className='subHeader'>
       <Container >
@@ -22,9 +34,28 @@ function SubHeader(props) {
             {todayString}
           </div>
           <div className="subHeader__action d-flex align-items-center">
-            <Button color='light' className='btn-sm ml-1' onClick={directLogin}>
-              Đăng nhập
-            </Button>
+            {
+              isLoggedIn
+                ?
+                <div className='menu'>
+                  <div className="d-flex align-items-center">
+                    <img className='menu__ava mt-1' src="https://toppng.com/uploads/preview/roger-berry-avatar-placeholder-11562991561rbrfzlng6h.png" alt="avatar" />
+                    <p className='menu__name'>{localStorage.getItem('full_name') || "unknown"}</p>
+                  </div>
+
+                  <div className="menu__item">
+                    <p className='menu__item-link'>Tài khoản</p>
+                    <p className='menu__item-link' onClick={handleLogOut}>Đăng xuất</p>
+                  </div>
+                </div>
+                :
+                <Button color='light' className='btn-sm ml-1' onClick={directLogin}>
+                  Đăng nhập
+                </Button>
+            }
+
+
+
             <div className='subHeader__action-inputGroup'>
               <InputGroup>
                 <Button color='light' className='border btn-sm'>
@@ -49,8 +80,8 @@ function SubHeader(props) {
             </div>
           </div>
         </div>
-      </Container>
-    </div>
+      </Container >
+    </div >
   );
 }
 

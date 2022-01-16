@@ -624,19 +624,23 @@ export const topCateNews = [
       'https://kenh14cdn.com/zoom/460_289/203336854389633024/2022/1/10/photo1641787755234-1641787755408205526273.jpg',
     content:
       'Sau bao lần vướng đủ mọi thể loại `phốt` từ tài năng đến thái độ, công chúng Hàn Quốc lẫn quốc tế dường như đã bắt đầu có cái nhìn khắt khe hơn đối với tân binh thị phi IVE. Một trong những vấn đề khiến cho netizen không ngừng `cà khịa` nhóm chính là khả năng ca hát của các thành viên. Jang Wonyoung nhiều lần bị phát hiện hát live thều thào trên sân khấu encore, các thành viên còn lại của IVE cũng ít khi gây được ấn tượng tốt đẹp về tài ca hát. Tân binh thị phi IVE cover nhạc Taeyeon (SNSD): Vắng bà chúa thều thào Wonyoung nên nghe mượt hẳn, vocal có thảm hoạ như lời đồn? - Ảnh 1. Wonyoung được xem là lỗ hổng vocal của IVE với nhiều lần hát live thều thào, không thành tiếng. Giữa lúc tranh cãi về vocal `thảm hoạ` của IVE vẫn còn là đề tài nóng trên mạng xã hội, mới đây, netizen đã bàn luận về 1 video cover của 2 thành viên Ahn Yujin và Liz. Cụ thể, hai cô nàng trổ tài cover ca khúc Four Seasons của đàn chị Taeyeon (SNSD) trong chương trình phát thanh FM4U Good Morning FM của đài MBC vào ngày 6/12 hồi tháng trước.',
-    pageRoot: 'kenh14.vn',
-    category: 'Đời sống',
+    pageRoot: 'tienphong.vn',
+    category: 'Pháp luật',
     isNew: true,
     relaTag: [
       {
         value: 1,
-        label: 'Đời sống',
+        label: 'Pháp Luật',
+      },
+      {
+        value: 15,
+        label: 'Lương Tâm',
       },
     ],
     tag: [
       {
         value: 1,
-        label: 'Đời sống',
+        label: 'Pháp luật',
       },
     ],
     comment: [
@@ -2064,18 +2068,22 @@ export const totalNews = [
     content:
       'Sau bao lần vướng đủ mọi thể loại `phốt` từ tài năng đến thái độ, công chúng Hàn Quốc lẫn quốc tế dường như đã bắt đầu có cái nhìn khắt khe hơn đối với tân binh thị phi IVE. Một trong những vấn đề khiến cho netizen không ngừng `cà khịa` nhóm chính là khả năng ca hát của các thành viên. Jang Wonyoung nhiều lần bị phát hiện hát live thều thào trên sân khấu encore, các thành viên còn lại của IVE cũng ít khi gây được ấn tượng tốt đẹp về tài ca hát. Tân binh thị phi IVE cover nhạc Taeyeon (SNSD): Vắng bà chúa thều thào Wonyoung nên nghe mượt hẳn, vocal có thảm hoạ như lời đồn? - Ảnh 1. Wonyoung được xem là lỗ hổng vocal của IVE với nhiều lần hát live thều thào, không thành tiếng. Giữa lúc tranh cãi về vocal `thảm hoạ` của IVE vẫn còn là đề tài nóng trên mạng xã hội, mới đây, netizen đã bàn luận về 1 video cover của 2 thành viên Ahn Yujin và Liz. Cụ thể, hai cô nàng trổ tài cover ca khúc Four Seasons của đàn chị Taeyeon (SNSD) trong chương trình phát thanh FM4U Good Morning FM của đài MBC vào ngày 6/12 hồi tháng trước.',
     pageRoot: 'tienphong.vn',
-    category: 'Đời sống',
+    category: 'Pháp Luật',
     isNew: true,
     relaTag: [
       {
         value: 1,
-        label: 'Đời sống',
+        label: 'Pháp Luật',
+      },
+      {
+        value: 15,
+        label: 'Lương Tâm',
       },
     ],
     tag: [
       {
         value: 1,
-        label: 'Đời sống',
+        label: 'Pháp luật',
       },
     ],
     comment: [

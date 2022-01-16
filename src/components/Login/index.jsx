@@ -26,6 +26,8 @@ function Login(props) {
     } else {
       window.localStorage.setItem('role', result.role);
       window.localStorage.setItem('full_name', result.full_name);
+      window.localStorage.setItem('isLoggedIn', true);
+
       navigate("/");
     }
   };
@@ -40,7 +42,7 @@ function Login(props) {
           <div className="login__elementLeft">
             <img
               className="login__logoLeft"
-              src="https://wildaid.org/wp-content/uploads/2020/08/NBC.png"
+              src="https://seeklogo.com/images/N/nbc-news-logo-EDDBA8ADC9-seeklogo.com.png"
               alt="logo"
             />
             <h3 className="login__titleLeft">Đăng nhập</h3>

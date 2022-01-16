@@ -45,3 +45,46 @@
     }
   }
 }
+
+.menu {
+  position: relative;
+  cursor: pointer;
+
+  &__ava {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  &__name {
+    margin: 0;
+  }
+
+  &__item {
+    background: #333;
+    padding: 5px 8px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    display: none;
+    left: 0;
+    right: 0;
+    z-index: 10;
+
+    &-link {
+      margin: 5px 8px;
+      color: #fff;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &:hover &__item {
+    display: flex;
+  }
+}

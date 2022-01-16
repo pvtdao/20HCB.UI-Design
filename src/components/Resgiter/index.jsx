@@ -52,7 +52,7 @@ function Register(props) {
           <div className="login__elementLeft" style={{ height: "529px" }}>
             <img
               className="login__logoLeft"
-              src="https://wildaid.org/wp-content/uploads/2020/08/NBC.png"
+              src="https://seeklogo.com/images/N/nbc-news-logo-EDDBA8ADC9-seeklogo.com.png"
               alt="logo"
             />
             <h3 className="login__titleLeft">Đăng ký</h3>
