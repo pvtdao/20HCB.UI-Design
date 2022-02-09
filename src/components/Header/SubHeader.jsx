@@ -13,9 +13,9 @@ function SubHeader(props) {
   const directLogin = () => {
     navigate('/login')
   }
-  const logged = localStorage.getItem("isLoggedIn") || false
+  const logged = localStorage.getItem("isLoggedIn") || 'false'
 
-  const [isLoggedIn, setIsLoggedIn] = React.useState(false)
+  const [isLoggedIn, setIsLoggedIn] = React.useState(logged)
 
   React.useEffect(() => {
     setIsLoggedIn(logged)
@@ -23,7 +23,7 @@ function SubHeader(props) {
 
 
   const handleLogOut = () => {
-    setIsLoggedIn(false)
+    setIsLoggedIn('false')
     localStorage.setItem("isLoggedIn", false)
   }
   return (
@@ -35,16 +35,28 @@ function SubHeader(props) {
           </div>
           <div className="subHeader__action d-flex align-items-center">
             {
-              isLoggedIn
+              isLoggedIn === 'true'
                 ?
                 <div className='menu'>
-                  <div className="d-flex align-items-center">
+                  <div className="d-flex align-items-center min-w-180">
                     <img className='menu__ava mt-1' src="https://toppng.com/uploads/preview/roger-berry-avatar-placeholder-11562991561rbrfzlng6h.png" alt="avatar" />
                     <p className='menu__name'>{localStorage.getItem('full_name') || "unknown"}</p>
                   </div>
 
                   <div className="menu__item">
-                    <p className='menu__item-link'>Tài khoản</p>
+                    <p className='menu__item-link' onClick={() => navigate('/account')}>Tài khoản</p>
+                    {localStorage.getItem('role') === 'writer' || localStorage.getItem('role') === 'admin' ?
+                      <p className='menu__item-link'>Quản lý bài báo</p>
+                      : ""
+                    }
+                    {localStorage.getItem('role') === 'admin' ?
+                      <p className='menu__item-link'>Quản lý</p>
+                      : ""
+                    }
+                    {localStorage.getItem('role') === 'editor' ?
+                      <p className='menu__item-link'>Quản lý bài báo</p>
+                      : ""
+                    }
                     <p className='menu__item-link' onClick={handleLogOut}>Đăng xuất</p>
                   </div>
                 </div>

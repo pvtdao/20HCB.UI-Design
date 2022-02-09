@@ -12,6 +12,11 @@ import Register from './components/Resgiter';
 import './scss/main.scss';
 import { news } from './fakeData/news';
 import { category } from './fakeData/category';
+import Account from './components/Account';
+import MyPost from './components/MyPost';
+import PendingPost from './components/PendingPost';
+import MyInfor from './components/MyInfor';
+import CreatePost from './components/CreatePost';
 
 function App() {
   const location = useLocation();
@@ -20,7 +25,9 @@ function App() {
 
   return (
     <div className='App'>
-      {location.pathname === '/register' || location.pathname === '/login' ? (
+      {location.pathname === '/register' ||
+      location.pathname === '/login' ||
+      location.pathname.includes('account') ? (
         ''
       ) : (
         <>
@@ -38,9 +45,17 @@ function App() {
           path='/category/:categorySlug'
           element={<Category category={category} />}
         />
+        <Route path='/account' element={<Account />}>
+          <Route path='my-posts' element={<MyPost />} />
+          <Route path='pending-posts' element={<PendingPost />} />
+          <Route path='my-infor' element={<MyInfor />} />
+          <Route path='new-post' element={<CreatePost />} />
+        </Route>
       </Routes>
 
-      {location.pathname === '/register' || location.pathname === '/login' ? (
+      {location.pathname === '/register' ||
+      location.pathname === '/login' ||
+      location.pathname.includes('account') ? (
         ''
       ) : (
         <Footer />

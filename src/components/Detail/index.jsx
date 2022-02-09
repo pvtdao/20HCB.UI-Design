@@ -19,12 +19,12 @@ function Detail(props) {
               <Col>
                 <Breadcrumb>
                   <BreadcrumbItem>
-                    <a href="/#">
-                      Pháp Luật
+                    <a href={`/category/${detail.category}`}>
+                      {detail.category}
                     </a>
                   </BreadcrumbItem>
-                  <BreadcrumbItem active>
-                    Đời sống
+                  <BreadcrumbItem active className='max-w-250 line-1'>
+                    {detail.title}
                   </BreadcrumbItem>
                 </Breadcrumb>
               </Col>

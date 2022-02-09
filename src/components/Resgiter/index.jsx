@@ -25,10 +25,10 @@ function Register(props) {
     event.preventDefault();
     console.log(event.target.email.value);
     console.log(event.target.password.value);
-    if(!validateEmail(event.target.email.value.trim())){
-        setIsEmail(true);
-        setErrorEmailMessage("Email không hợp lệ");
-        return;
+    if (!validateEmail(event.target.email.value.trim())) {
+      setIsEmail(true);
+      setErrorEmailMessage("Email không hợp lệ");
+      return;
     }
     const result = accounts.find(
       ({ email }) => email === event.target.email.value.trim()
@@ -36,8 +36,15 @@ function Register(props) {
     if (result !== undefined) {
       setIsEmail(true);
       setErrorEmailMessage("Email đã đăng ký tài khoản!!!");
-    }else{ 
-    navigate("/login");
+    } else {
+      accounts.push({
+        id: accounts.length + 1,
+        full_name: event.target.fullname.value,
+        email: event.target.email.value,
+        password: event.target.password.value,
+        role: 'user'
+      })
+      navigate("/login");
     }
   };
 
