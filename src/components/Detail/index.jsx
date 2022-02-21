@@ -5,11 +5,15 @@ import FastNews from '../FastNews';
 import { totalNews } from '../../fakeData/news'
 import { useParams } from 'react-router-dom'
 import RelateTag from '../RelateTag';
+import { allPost } from '../../fakeData/allPost';
 
 function Detail(props) {
   const { newsSlug } = useParams()
 
-  const detail = totalNews.filter(item => item.slug === newsSlug)[0]
+  // const detail = totalNews.filter(item => item.slug === newsSlug)[0]
+  // const detail = JSON.parse(localStorage.getItem("new_post"))
+  const detail = allPost[3]
+  console.log("detail: ", detail)
   return (
     <div className='detail mt-4'>
       <Container>
@@ -41,17 +45,18 @@ function Detail(props) {
             <Row>
               <Col>
                 <p className='detail__shortDes'>
-                  {detail.shortDescription}
+                  {detail.shortDes}
                 </p>
               </Col>
             </Row>
 
             <Row className='mt-3'>
               <Col>
-                <img src={detail.mainImage} className='detail__main' alt='post' />
+                <img src={detail.avatar.src} className='detail__main' alt='post' />
 
-                <p className='detail__content mt-3'>
-                  {detail.content}
+                <p className='detail__content mt-3' dangerouslySetInnerHTML={{
+                  __html: detail.content.main,
+                }}>
                 </p>
 
               </Col>
@@ -76,7 +81,7 @@ function Detail(props) {
               <Col>
                 <span className='mr-2'>Tags: </span>
                 {detail.tag.map(tag => {
-                  return <Button className='mr-1 btn-sm' key={tag.value}>{tag.label}</Button>
+                  return <Button className='mr-1 btn-sm' key={tag.id}>{tag.tag}</Button>
                 })}
               </Col>
             </Row>
@@ -87,7 +92,11 @@ function Detail(props) {
             <Row className='mt-4'>
               <Col>
                 <h3 className='comment__title'>Bình luận</h3>
-                {detail.comment.map(cmt => <Comment key={cmt.id} comment={cmt} />)}
+                {detail.comment.length === 0 ? "Chưa có bình luận" :
+                  <div>
+                    {detail.comment.map(cmt => <Comment key={cmt.id} comment={cmt} />)}
+                  </div>
+                }
               </Col>
             </Row>
 
@@ -111,7 +120,7 @@ function Detail(props) {
 
           <Col lg={4}>
             <FastNews />
-            <RelateTag relateTag={detail.relaTag} />
+            <RelateTag relateTag={detail.tag} />
           </Col>
         </Row>
       </Container>

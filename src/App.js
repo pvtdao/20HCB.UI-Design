@@ -17,11 +17,16 @@ import MyPost from './components/MyPost';
 import PendingPost from './components/PendingPost';
 import MyInfor from './components/MyInfor';
 import CreatePost from './components/CreatePost';
+import { allPost } from './fakeData/allPost';
 
 function App() {
   const location = useLocation();
 
   const newsData = news;
+
+  React.useEffect(() => {
+    localStorage.setItem('all_post', JSON.stringify(allPost));
+  }, []);
 
   return (
     <div className='App'>

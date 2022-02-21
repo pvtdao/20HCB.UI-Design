@@ -27,6 +27,8 @@
   &__menu {
     cursor: pointer;
     transition: all linear 0.2s;
+    color: #000;
+
     &:hover {
       color: #3d87e7;
     }

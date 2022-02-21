@@ -3,11 +3,21 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { Badge, Button, Col, Input, InputGroup, Row, Table } from 'reactstrap';
 import { BsBell } from 'react-icons/bs';
 import { totalNews } from '../../fakeData/news'
+import { allPost } from '../../fakeData/allPost'
 import { RiDeleteBack2Line } from "react-icons/ri";
+import { useNavigate } from 'react-router-dom';
 
 function MyPost(props) {
+  const navigate = useNavigate()
+
   const [filterValue, setFilterValue] = useState("")
-  const myNews = totalNews.filter(news => news.author === localStorage.getItem(`full_name`))
+  const myNews = allPost.filter(news => news.author === localStorage.getItem(`full_name`))
+
+
+  function directCreatePost() {
+    navigate(`/account/new-post`)
+  }
+
 
   const renderHeaderTable = () => {
     return (
@@ -32,10 +42,10 @@ function MyPost(props) {
           } else if (value.title.toLowerCase().includes(filterValue.toLowerCase())) {
             return value
           }
-        }).map(item => {
+        }).map((item, index) => {
           return <tr key={item.slug}>
             <th scope="row" className='text-center'>
-              {item.slug}
+              {index + 1}
             </th>
             <td className='text-center line-1'>
               {item.title}
@@ -44,11 +54,10 @@ function MyPost(props) {
               {item.releaseDate}
             </td>
             <td className='text-center'>
-
               <Badge color={item.status === "Hoạt động" ? "primary" : item.status === "Đang chờ duyệt" ? "secondary" : "danger"} className='align-items-center'>{item.status}</Badge>
             </td>
             <td className='text-center'>
-              Nhận xét
+              {!item.evaluation_desc ? "" : item.evaluation_desc}
             </td>
           </tr>
         })
@@ -84,7 +93,7 @@ function MyPost(props) {
           }}>
             <div className="d-flex align-items-center justify-content-between">
               <h5 className='mg-0'>Bài viết</h5>
-              <Button className='btn-sm' color='primary'>Thêm bài viết</Button>
+              <Button className='btn-sm' color='primary' onClick={directCreatePost}>Thêm bài viết</Button>
             </div>
 
             <Table

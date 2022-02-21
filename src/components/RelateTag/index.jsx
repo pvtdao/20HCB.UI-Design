@@ -12,9 +12,9 @@ function RelateTag({ relateTag }) {
 
             <Row className='mb-3'>
                 {relateTag.map(tag =>
-                    <Col xs={3} key={tag.value}>
+                    <Col xs="auto" key={tag.id}>
                         <Badge className='pd-1'>
-                            {tag.label}
+                            {tag.tag}
                         </Badge>
                     </Col>
                 )}

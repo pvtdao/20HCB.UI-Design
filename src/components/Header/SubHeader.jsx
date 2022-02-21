@@ -25,6 +25,10 @@ function SubHeader(props) {
   const handleLogOut = () => {
     setIsLoggedIn('false')
     localStorage.setItem("isLoggedIn", false)
+    localStorage.removeItem("email")
+    localStorage.removeItem("role")
+    localStorage.removeItem("full_name")
+    localStorage.removeItem("@id")
   }
   return (
     <div className='subHeader'>

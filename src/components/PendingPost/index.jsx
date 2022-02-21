@@ -3,12 +3,20 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { Badge, Button, Col, Input, InputGroup, Row, Table } from 'reactstrap';
 import { totalNews } from '../../fakeData/news';
 import { RiDeleteBack2Line } from 'react-icons/ri';
+import { allPost } from '../../fakeData/allPost';
+import { useNavigate } from 'react-router-dom';
 
 function PendingPost(props) {
+  const navigate = useNavigate()
+
   const [filterValue, setFilterValue] = useState('');
-  const myNews = totalNews.filter(
+  const myNews = allPost.filter(
     (news) => news.author === localStorage.getItem(`full_name`) && news.status === "Đang chờ duyệt"
   );
+
+  function directCreatePost() {
+    navigate(`/account/new-post`)
+  }
 
   const renderHeaderTable = () => {
     return (
@@ -37,11 +45,11 @@ function PendingPost(props) {
               return value;
             }
           })
-          .map((item) => {
+          .map((item, index) => {
             return (
               <tr key={item.slug}>
                 <th scope='row' className='text-center'>
-                  {item.slug}
+                  {index + 1}
                 </th>
                 <td className='text-center line-1'>{item.title}</td>
                 <td className='text-center'>{item.releaseDate}</td>
@@ -59,7 +67,7 @@ function PendingPost(props) {
                     {item.status}
                   </Badge>
                 </td>
-                <td className='text-center'>Nhận xét</td>
+                <td className='text-center'></td>
               </tr>
             );
           })}
@@ -104,7 +112,7 @@ function PendingPost(props) {
           >
             <div className='d-flex align-items-center justify-content-between'>
               <h5 className='mg-0'>Bài viết</h5>
-              <Button className='btn-sm' color='primary'>
+              <Button className='btn-sm' color='primary' onClick={directCreatePost}>
                 Thêm bài viết
               </Button>
             </div>

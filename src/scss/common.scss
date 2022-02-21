@@ -1,0 +1,29 @@
+.tag-btn {
+  background-color: #3d87e7;
+  color: #fff;
+  padding: 10px 14px;
+  display: inline-block;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover &__del {
+    display: flex;
+  }
+
+  &__del {
+    background-color: red;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    position: absolute;
+    top: -20%;
+    left: 100%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    display: none;
+    user-select: none;
+  }
+}

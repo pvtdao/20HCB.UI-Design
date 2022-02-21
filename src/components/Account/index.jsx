@@ -26,23 +26,23 @@ function Account(props) {
 
                         <Row className='mt-5 fixed'>
                             <Col>
-                                <NavLink className="account__menu d-flex align-items-center mt-4 ml-4" to={`/account/my-posts`}>
+                                <NavLink className={props => { return `${props.isActive ? `isActive account__menu d-flex align-items-center mt-4 ml-4` : "account__menu d-flex align-items-center mt-4 ml-4"}` }} to={`/account/my-posts`}>
                                     <RiDashboardLine className='account__menu-icon' />
                                     <p className='account__menu-text'>Bài viết</p>
                                 </NavLink>
-                                <NavLink className="account__menu d-flex align-items-center mt-4 ml-4" to={`/account/pending-posts`}>
+                                <NavLink className={props => { return `${props.isActive ? `isActive account__menu d-flex align-items-center mt-4 ml-4` : "account__menu d-flex align-items-center mt-4 ml-4"}` }} to={`/account/pending-posts`}>
                                     <BsListTask className='account__menu-icon' />
                                     <p className='account__menu-text'>Chờ duyệt</p>
                                 </NavLink>
-                                <NavLink className="account__menu d-flex align-items-center mt-4 ml-4" to={`/account/my-infor`}>
+                                <NavLink className={props => { return `${props.isActive ? `isActive account__menu d-flex align-items-center mt-4 ml-4` : "account__menu d-flex align-items-center mt-4 ml-4"}` }} to={`/account/my-infor`}>
                                     <FaUser className='account__menu-icon' />
                                     <p className='account__menu-text'>Thông tin cá nhân</p>
                                 </NavLink>
-                                <NavLink className="account__menu d-flex align-items-center mt-4 ml-4" to={`/account/new-post`}>
+                                <NavLink className={props => { return `${props.isActive ? `isActive account__menu d-flex align-items-center mt-4 ml-4` : "account__menu d-flex align-items-center mt-4 ml-4"}` }} to={`/account/new-post`}>
                                     <FaPlus className='account__menu-icon' />
                                     <p className='account__menu-text'>Thêm bài viết</p>
                                 </NavLink>
-                                <NavLink className="account__menu d-flex align-items-center mt-4 ml-4" to={`/`}>
+                                <NavLink className={props => { return `${props.isActive ? `isActive account__menu d-flex align-items-center mt-4 ml-4` : "account__menu d-flex align-items-center mt-4 ml-4"}` }} to={`/`}>
                                     <IoExitOutline className='account__menu-icon' />
                                     <p className='account__menu-text'>Quay lại</p>
                                 </NavLink>

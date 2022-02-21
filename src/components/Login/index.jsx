@@ -28,6 +28,7 @@ function Login(props) {
       window.localStorage.setItem('full_name', result.full_name);
       window.localStorage.setItem('isLoggedIn', true);
       window.localStorage.setItem('email', result.email);
+      window.localStorage.setItem('@id', result.id);
 
       navigate("/");
     }

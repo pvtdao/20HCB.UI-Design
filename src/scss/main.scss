@@ -9,9 +9,10 @@
 @import './login.scss';
 @import './category.scss';
 @import './account.scss';
+@import './common.scss';
 
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 a {
@@ -40,6 +41,13 @@ a {
 .pd-1 {
   padding: 8px;
 }
+.pd-1-1 {
+  padding: 12px;
+}
+
+.pd-2 {
+  padding: 16px;
+}
 
 .bdr-none {
   border-radius: unset;
@@ -47,6 +55,10 @@ a {
 
 .mt-4-5 {
   margin-top: 35px;
+}
+
+.mb-1 {
+  margin-bottom: 8px;
 }
 
 .mg-0 {
@@ -95,10 +107,26 @@ a {
   position: relative;
 }
 
+.absolute {
+  position: absolute;
+}
+
 .fixed {
   position: fixed;
 }
 
 .pd-5 {
   padding: 30px !important;
+}
+
+.isActive {
+  color: #3d87e7 !important;
+}
+
+.pointer {
+  cursor: pointer !important;
+}
+
+img {
+  width: 100%;
 }

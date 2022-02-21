@@ -1,7 +1,6 @@
 export const news = [
   {
     slug: '12',
-    status: 'Hoạt động',
     location: 'Hà Nam',
     releaseDate: '27-12-2020',
     rootLogo:
@@ -35,10 +34,12 @@ export const news = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '21',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo: 'https://static.mediacdn.vn/tuoitre/web_images/LogoTTTV.png',
@@ -72,10 +73,11 @@ export const news = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: 'cần trình bày chi tiết hơn',
   },
   {
     slug: '22',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo: 'https://static.mediacdn.vn/tuoitre/web_images/LogoTTTV.png',
@@ -108,10 +110,12 @@ export const news = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: 'cần thêm ý kiến người tiêu dùng',
+    status: 1,
   },
   {
     slug: '23',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo: 'https://static.mediacdn.vn/tuoitre/web_images/LogoTTTV.png',
@@ -144,10 +148,12 @@ export const news = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '24',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo: 'https://static.mediacdn.vn/tuoitre/web_images/LogoTTTV.png',
@@ -180,10 +186,12 @@ export const news = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '25',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo:
@@ -217,10 +225,12 @@ export const news = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '26',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo:
@@ -254,10 +264,12 @@ export const news = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '27',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo:
@@ -291,10 +303,12 @@ export const news = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '28',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo:
@@ -328,10 +342,12 @@ export const news = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '29',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo:
@@ -365,10 +381,12 @@ export const news = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '30',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo:
@@ -402,14 +420,15 @@ export const news = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
 ];
 
 export const topCateNews = [
   {
     slug: '6',
-
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '27-12-2020',
     rootLogo:
@@ -443,10 +462,12 @@ export const topCateNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '13',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo:
@@ -481,10 +502,12 @@ export const topCateNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '12',
-    status: 'Hoạt động',
     location: 'Hà Nam',
     releaseDate: '27-12-2020',
     rootLogo:
@@ -518,10 +541,12 @@ export const topCateNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '10',
-    status: 'Hoạt động',
     location: 'Lâm Đồng',
     releaseDate: '27-12-2020',
     rootLogo: 'https://baomoi.com/images/default-skin/bm-logo.png',
@@ -553,10 +578,12 @@ export const topCateNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '30',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo:
@@ -590,10 +617,12 @@ export const topCateNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '11',
-    status: 'Hoạt động',
     location: 'Đà Lạt',
     releaseDate: '27-12-2020',
     rootLogo:
@@ -628,11 +657,12 @@ export const topCateNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '1',
-
-    status: 'Hoạt động',
     location: 'Hồ Chí Minh',
     releaseDate: '27-12-2020',
     rootLogo:
@@ -670,12 +700,13 @@ export const topCateNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
 
   {
     slug: '2',
-
-    status: 'Hoạt động',
     location: 'Hồ Chí Minh',
     releaseDate: '27-12-2020',
     rootLogo:
@@ -710,13 +741,15 @@ export const topCateNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
 ];
 
 export const newPost = [
   {
     slug: '13',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo:
@@ -751,10 +784,12 @@ export const newPost = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '14',
-    status: 'Hoạt động',
     location: 'Quãng Bình',
     releaseDate: '1-1-2022',
     rootLogo:
@@ -789,10 +824,12 @@ export const newPost = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '15',
-    status: 'Hoạt động',
     location: 'Khánh Hòa',
     releaseDate: '1-1-2022',
     rootLogo:
@@ -826,10 +863,12 @@ export const newPost = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '16',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo: 'https://static.mediacdn.vn/tuoitre/web_images/LogoTTTV.png',
@@ -862,10 +901,12 @@ export const newPost = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '17',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo: 'https://static.mediacdn.vn/tuoitre/web_images/LogoTTTV.png',
@@ -898,10 +939,12 @@ export const newPost = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '18',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo: 'https://static.mediacdn.vn/tuoitre/web_images/LogoTTTV.png',
@@ -937,7 +980,6 @@ export const newPost = [
   },
   {
     slug: '19',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo: 'https://static.mediacdn.vn/tuoitre/web_images/LogoTTTV.png',
@@ -971,10 +1013,12 @@ export const newPost = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '20',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo: 'https://static.mediacdn.vn/tuoitre/web_images/LogoTTTV.png',
@@ -1007,14 +1051,15 @@ export const newPost = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
 ];
 
 export const hotNews = [
   {
     slug: '1',
-
-    status: 'Hoạt động',
     location: 'Hồ Chí Minh',
     releaseDate: '27-12-2020',
     rootLogo:
@@ -1048,10 +1093,12 @@ export const hotNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '30',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo:
@@ -1085,11 +1132,12 @@ export const hotNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '3',
-
-    status: 'Hoạt động',
     location: 'Hồ Chí Minh',
     releaseDate: '27-12-2020',
     rootLogo:
@@ -1123,11 +1171,12 @@ export const hotNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '4',
-
-    status: 'Hoạt động',
     location: 'Hà Nội',
     releaseDate: '27-12-2020',
     rootLogo:
@@ -1161,10 +1210,12 @@ export const hotNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '25',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo:
@@ -1198,11 +1249,12 @@ export const hotNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '6',
-
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '27-12-2020',
     rootLogo:
@@ -1236,14 +1288,15 @@ export const hotNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
 ];
 
 export const fastNews = [
   {
     slug: '7',
-
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '27-12-2020',
     rootLogo: 'https://baomoi.com/images/default-skin/bm-logo.png',
@@ -1277,11 +1330,12 @@ export const fastNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '8',
-
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '27-12-2020',
     rootLogo: 'https://baomoi.com/images/default-skin/bm-logo.png',
@@ -1315,11 +1369,12 @@ export const fastNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '9',
-
-    status: 'Hoạt động',
     location: 'Thái Bình',
     releaseDate: '27-12-2020',
     rootLogo: 'https://baomoi.com/images/default-skin/bm-logo.png',
@@ -1352,10 +1407,12 @@ export const fastNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '10',
-    status: 'Hoạt động',
     location: 'Lâm Đồng',
     releaseDate: '27-12-2020',
     rootLogo: 'https://baomoi.com/images/default-skin/bm-logo.png',
@@ -1387,10 +1444,12 @@ export const fastNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '11',
-    status: 'Hoạt động',
     location: 'Đà Lạt',
     releaseDate: '27-12-2020',
     rootLogo:
@@ -1425,13 +1484,15 @@ export const fastNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
 ];
 
 export const totalNews = [
   {
     slug: '21',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo: 'https://static.mediacdn.vn/tuoitre/web_images/LogoTTTV.png',
@@ -1465,17 +1526,19 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
     linkNews: 'https://tuoitre.vn/',
     author: 'Trần Gia Hân',
   },
   {
     slug: '22',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo: 'https://static.mediacdn.vn/tuoitre/web_images/LogoTTTV.png',
     linkNews: 'https://tuoitre.vn/',
-    author: 'Trần Gia Hân',
+    author: 'Nguyễn Phương Hằng',
     title: "Diệu Hiền - 'đệ nhất đào võ' tài hoa, lận đận",
     shortDescription:
       'Từng là cô đào cải lương hạng nhất, cuối đời, nghệ sĩ Diệu Hiền dọn vào viện dưỡng lão sống để không phiền lụy con cháu.',
@@ -1505,16 +1568,18 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '23',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo: 'https://static.mediacdn.vn/tuoitre/web_images/LogoTTTV.png',
     title: 'Nghệ sĩ mừng, lo trước mùa kịch Tết',
     linkNews: 'https://tuoitre.vn/',
-    author: 'Trần Gia Hân',
+    author: 'Dũng Lò Vôi',
     shortDescription:
       'Nghệ sĩ sân khấu Idecaf, Thế Giới Trẻ... vừa tập kịch Tết vừa hồi hộp theo dõi hiệu ứng mua vé của khán giả.',
     mainImage:
@@ -1543,15 +1608,17 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '24',
-    status: 'Đang chờ duyệt',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo: 'https://static.mediacdn.vn/tuoitre/web_images/LogoTTTV.png',
     linkNews: 'https://tuoitre.vn/',
-    author: 'Trần Gia Hân',
+    author: 'Kim Nhựt Trường',
     title: 'Nghệ sĩ Bạch Tuyết, Thanh Hải kỷ niệm tình bạn',
     shortDescription:
       'Trong cuộc trò chuyện với VnExpress, Bạch Tuyết cho biết: NSND Thanh Hải là người không thể thiếu trong đời làm nghệ thuật của tôi',
@@ -1581,10 +1648,12 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '25',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo:
@@ -1620,10 +1689,12 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '26',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo:
@@ -1657,10 +1728,12 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '27',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo:
@@ -1694,10 +1767,12 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '28',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo:
@@ -1731,10 +1806,12 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '29',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo:
@@ -1768,10 +1845,12 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '30',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo:
@@ -1807,10 +1886,12 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '13',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo:
@@ -1847,10 +1928,12 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '14',
-    status: 'Hoạt động',
     location: 'Quãng Bình',
     releaseDate: '1-1-2022',
     rootLogo:
@@ -1887,10 +1970,12 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '15',
-    status: 'Hoạt động',
     location: 'Khánh Hòa',
     releaseDate: '1-1-2022',
     rootLogo:
@@ -1926,10 +2011,12 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '16',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo: 'https://static.mediacdn.vn/tuoitre/web_images/LogoTTTV.png',
@@ -1964,10 +2051,12 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '17',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo: 'https://static.mediacdn.vn/tuoitre/web_images/LogoTTTV.png',
@@ -2002,10 +2091,12 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '18',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo: 'https://static.mediacdn.vn/tuoitre/web_images/LogoTTTV.png',
@@ -2043,7 +2134,6 @@ export const totalNews = [
   },
   {
     slug: '19',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo: 'https://static.mediacdn.vn/tuoitre/web_images/LogoTTTV.png',
@@ -2079,10 +2169,12 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '20',
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '1-1-2022',
     rootLogo: 'https://static.mediacdn.vn/tuoitre/web_images/LogoTTTV.png',
@@ -2117,11 +2209,12 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '1',
-
-    status: 'Hoạt động',
     location: 'Hồ Chí Minh',
     releaseDate: '27-12-2020',
     rootLogo:
@@ -2161,11 +2254,12 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '2',
-
-    status: 'Hoạt động',
     location: 'Hồ Chí Minh',
     releaseDate: '27-12-2020',
     rootLogo:
@@ -2202,11 +2296,12 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '3',
-
-    status: 'Hoạt động',
     location: 'Hồ Chí Minh',
     releaseDate: '27-12-2020',
     rootLogo:
@@ -2242,11 +2337,12 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '4',
-
-    status: 'Hoạt động',
     location: 'Hà Nội',
     releaseDate: '27-12-2020',
     rootLogo:
@@ -2282,11 +2378,12 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '5',
-
-    status: 'Hoạt động',
     location: 'Hải Phòng',
     releaseDate: '27-12-2020',
     rootLogo:
@@ -2322,11 +2419,12 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '6',
-
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '27-12-2020',
     rootLogo:
@@ -2362,11 +2460,12 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '7',
-
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '27-12-2020',
     rootLogo: 'https://baomoi.com/images/default-skin/bm-logo.png',
@@ -2402,11 +2501,12 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '8',
-
-    status: 'Hoạt động',
     location: 'TP.HCM',
     releaseDate: '27-12-2020',
     rootLogo: 'https://baomoi.com/images/default-skin/bm-logo.png',
@@ -2442,11 +2542,12 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '9',
-
-    status: 'Hoạt động',
     location: 'Thái Bình',
     releaseDate: '27-12-2020',
     rootLogo: 'https://baomoi.com/images/default-skin/bm-logo.png',
@@ -2481,10 +2582,12 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '10',
-    status: 'Hoạt động',
     location: 'Lâm Đồng',
     releaseDate: '27-12-2020',
     rootLogo: 'https://baomoi.com/images/default-skin/bm-logo.png',
@@ -2518,10 +2621,12 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '11',
-    status: 'Hoạt động',
     location: 'Đà Lạt',
     releaseDate: '27-12-2020',
     rootLogo:
@@ -2558,10 +2663,12 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
   {
     slug: '12',
-    status: 'Hoạt động',
     location: 'Hà Nam',
     releaseDate: '27-12-2020',
     rootLogo:
@@ -2597,5 +2704,8 @@ export const totalNews = [
         commentText: 'Hong pé ơi',
       },
     ],
+    reporter_id: 2,
+    evaluation_desc: null,
+    status: 1,
   },
 ];
