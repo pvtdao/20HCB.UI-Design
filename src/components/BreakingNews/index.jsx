@@ -2,7 +2,7 @@ import React from 'react';
 import { Badge, Col, Row } from 'reactstrap';
 import MainPost from '../Post/MainPost';
 import SubPost from '../Post/SubPost';
-import { hotNews } from "../../fakeData/news"
+import { hotNews } from "../../fakeData/hotNews"
 function BreakingNews(props) {
   return <div className='breaking'>
     <div className="border-bottom mb-3">

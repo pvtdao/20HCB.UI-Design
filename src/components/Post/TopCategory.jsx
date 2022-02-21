@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Badge, Col, Container, Row } from 'reactstrap';
 import CommonPost from './CommonPost';
-import { topCateNews } from '../../fakeData/news'
+import { topCateNews } from '../../fakeData/topCategory'
 
 
 function TopCategory(props) {

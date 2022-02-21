@@ -17,8 +17,8 @@ function Account(props) {
                                 <div className="account__info-main justify-content-start d-flex align-items-center mt-3">
                                     <img className='comment__ava mt-1' src="https://toppng.com/uploads/preview/roger-berry-avatar-placeholder-11562991561rbrfzlng6h.png" alt="avatar" />
                                     <div className="d-flex flex-column ml-2">
-                                        <p className="account__info-name bold">{localStorage.getItem('full_name')}</p>
-                                        <p className="account__info-email">{localStorage.getItem('email')}</p>
+                                        <p className="account__info-name bold">{JSON.parse(localStorage.getItem('@user'))["full_name"]}</p>
+                                        <p className="account__info-email">{JSON.parse(localStorage.getItem('@user'))["email"]}</p>
                                     </div>
                                 </div>
                             </Col>

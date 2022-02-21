@@ -79,4 +79,8 @@ export const category = [
     id: '20',
     name: 'Khoa Học',
   },
+  {
+    id: '21',
+    name: 'Xã Hội',
+  },
 ];

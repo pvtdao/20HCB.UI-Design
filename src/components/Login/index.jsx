@@ -24,11 +24,14 @@ function Login(props) {
     } else if (result.password !== event.target.password.value.trim()) {
       setIsPassword(true);
     } else {
-      window.localStorage.setItem('role', result.role);
-      window.localStorage.setItem('full_name', result.full_name);
       window.localStorage.setItem('isLoggedIn', true);
-      window.localStorage.setItem('email', result.email);
-      window.localStorage.setItem('@id', result.id);
+
+      window.localStorage.setItem("@user", JSON.stringify({
+        role: result.role,
+        full_name: result.full_name,
+        email: result.email,
+        id: result.id
+      }))
 
       navigate("/");
     }

@@ -117,7 +117,7 @@ export const location = [
   },
   {
     id: '30',
-    name: 'Thành phố Hồ Chí Minh',
+    name: 'Hồ Chí Minh',
   },
   {
     id: '31',

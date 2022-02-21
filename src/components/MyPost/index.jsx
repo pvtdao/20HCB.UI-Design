@@ -11,7 +11,9 @@ function MyPost(props) {
   const navigate = useNavigate()
 
   const [filterValue, setFilterValue] = useState("")
-  const myNews = allPost.filter(news => news.author === localStorage.getItem(`full_name`))
+  const all_post = JSON.parse(localStorage.getItem("all_post")) ?? allPost
+
+  const myNews = all_post.filter(news => news.author === JSON.parse(localStorage.getItem(`@user`))["full_name"])
 
 
   function directCreatePost() {

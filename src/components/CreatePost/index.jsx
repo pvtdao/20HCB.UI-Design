@@ -1,27 +1,27 @@
-import React, { useState } from 'react';
-import { AiOutlineSearch } from 'react-icons/ai';
-import { Badge, Button, Col, Input, InputGroup, Row, Label, Form, FormGroup, Alert, UncontrolledAlert } from 'reactstrap';
-import { totalNews } from '../../fakeData/news';
-import { RiDeleteBack2Line } from 'react-icons/ri';
-import { category } from '../../fakeData/category'
-import { location } from '../../fakeData/location'
-import ButtonTag from '../Common/ButtonTag';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Button, Col, Form, FormGroup, Input, Label, Row } from 'reactstrap';
+import Swal from "sweetalert2";
 import uniqid from 'uniqid';
-import Swal from "sweetalert2"
-import EditorField from '../Common/Editor';
+import { category } from '../../fakeData/category';
+import { location } from '../../fakeData/location';
 import getFullDate from '../../uitl/getFullDate';
-// import randomstring from "randomstring";
+import ButtonTag from '../Common/ButtonTag';
+import EditorField from '../Common/Editor';
+import Loader from '../Loader';
 
 function CreatePost(props) {
   const [tag, setTag] = React.useState("")
   const [tagList, setTagList] = React.useState([])
   const [isErrorTag, setIsErrorTag] = React.useState(false)
 
+  const fileRef = React.useRef();
+  const navigate = useNavigate()
+  const [isLoad, setIsLoad] = React.useState(false);
+
   const todayTime = new Date()
   const { date, month, year } = getFullDate(todayTime)
   const randomSlug = (Math.random() + 2).toString(36).substring(2);
-
-  const [allPost, setAllPost] = React.useState([])
 
   const [value, setValue] = React.useState({
     location: location[0].name,
@@ -38,12 +38,10 @@ function CreatePost(props) {
   const tagInputRef = React.useRef(null)
 
   React.useEffect(() => {
-    const all_post = JSON.parse(localStorage.getItem("all_post"))
-    console.log("1:", all_post)
-    console.log("2:", all_post.push("1"))
-    console.log("3:", all_post)
-    setAllPost(all_post)
-  }, [])
+    setTimeout(() => {
+      setIsLoad(false);
+    }, 1500);
+  }, [isLoad])
 
   const handleAddTag = () => {
     if (!tag) {
@@ -139,9 +137,9 @@ function CreatePost(props) {
       slug: randomSlug,
       status: "Đang chờ duyệt",
       tag: tagList,
-      reporter_id: +localStorage.getItem("@id"),
+      reporter_id: +JSON.parse(localStorage.getItem("@user"))["id"],
       evaluation_desc: "",
-      author: localStorage.getItem("full_name"),
+      author: JSON.parse(localStorage.getItem("@user"))["full_name"],
       comment: [],
       relaTag: tagList,
       pageRoot: value.linkNews.split("/")[2],
@@ -162,209 +160,234 @@ function CreatePost(props) {
       console.log("value: ", data)
 
       const all_post = JSON.parse(localStorage.getItem("all_post"))
+      const new_posts = JSON.parse(localStorage.getItem("new_posts"))
       const newAllPost = all_post.push(data)
+      const newNewPosts = new_posts.unshift(data)
 
       localStorage.removeItem("all_post")
       localStorage.setItem("all_post", JSON.stringify(all_post))
-      localStorage.setItem("new_post", JSON.stringify(data))
+      localStorage.setItem("new_posts", JSON.stringify(new_posts))
+
+      setIsLoad(true)
+
+      setTimeout(() => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Thành công',
+          text: 'Đã thêm bài viết thành công!',
+          confirmButtonText: 'Save',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            navigate(`/account/my-posts`)
+          }
+        })
+      }, 1500)
     }
   }
 
   return <>
+    {isLoad ? <Loader /> :
+      <Row className='mt-2 ' style={{ minHeight: '95vh' }}>
+        <Col >
+          <div
+            className='myPosts pd-5 relative'
+            style={{
+              backgroundColor: 'rgba(255, 255, 255, 0.66)',
+              minHeight: '100%',
+            }}
+          >
+            <div className='d-flex align-items-center justify-content-between'>
+              <h5 className='mg-0'>Bài viết</h5>
+            </div>
 
-    <Row className='mt-2 ' style={{ minHeight: '95vh' }}>
-      <Col >
-        <div
-          className='myPosts pd-5 relative'
-          style={{
-            backgroundColor: 'rgba(255, 255, 255, 0.66)',
-            minHeight: '100%',
-          }}
-        >
-          <div className='d-flex align-items-center justify-content-between'>
-            <h5 className='mg-0'>Bài viết</h5>
-          </div>
-
-          <Form className='mt-4' onSubmit={handleOnSubmit} >
-            <Row>
-              <Col xs={12} md="4">
-                <FormGroup>
-                  <Label for="location">
-                    Chọn vị trí
-                  </Label>
-                  <Input
-                    id="location"
-                    name="location"
-                    type="select"
-                    onChange={handleOnChange}
-                  >
-                    {location.map(item => {
-                      return <option key={item.id}>
-                        {item.name}
-                      </option>
-                    })}
-                  </Input>
-                </FormGroup>
-              </Col>
-              <Col xs={12} md="4">
-                <FormGroup>
-                  <Label for="linkNews">
-                    Link bài viết gốc
-                  </Label>
-                  <Input
-                    id="linkNews"
-                    name="linkNews"
-                    type="text"
-                    onChange={handleOnChange}
-                  />
-                </FormGroup>
-              </Col>
-              <Col xs={12} md="4">
-                <FormGroup>
-                  <Label for="logoNews">
-                    Link logo báo
-                  </Label>
-                  <Input
-                    id="logoNews"
-                    name="logoNews"
-                    type="text"
-                    onChange={handleOnChange}
-                  />
-                </FormGroup>
-              </Col>
-            </Row>
-
-
-            <Row>
-              <Col xs={12} md={6}>
-                <FormGroup>
-                  <Label for="category">
-                    Chọn chuyên mục
-                  </Label>
-                  <Input
-                    id="category"
-                    name="category"
-                    type="select"
-                    onChange={handleOnChange}
-                  >
-                    {category.map(item => {
-                      return <option key={item.id}>
-                        {item.name}
-                      </option>
-                    })}
-                  </Input>
-                </FormGroup>
-              </Col>
-              <Col xs={12} md={6} className='d-flex align-items-end'>
-                <FormGroup className='flex-fill'>
-                  <Label for="tag">
-                    Nhập tên tag
-                  </Label>
-                  <Input
-                    id="tag"
-                    name="tag"
-                    type="text"
-                    onChange={handleChangeTag}
-                    invalid={isErrorTag}
-                    value={tag}
-                    ref={tagInputRef}
-                  />
-                </FormGroup>
-                <Button className='mb-3 ml-2' color="primary" onClick={handleAddTag}>Thêm</Button>
-              </Col>
-            </Row>
-
-            {
-              tagList.length !== 0 && <Row>
-                <Col>
+            <Form className='mt-4' onSubmit={handleOnSubmit} >
+              <Row>
+                <Col xs={12} md="4">
                   <FormGroup>
-                    <Label>
-                      Tag đã nhập (Tối đa 5 tag)
+                    <Label for="location">
+                      Chọn vị trí
                     </Label>
-                    <div>
-                      {
-                        tagList.map(item => {
-                          return <ButtonTag key={item.id} name={item.tag} id={item.id} onDelete={(id) => handleDelete(id)} />
-                        })
-                      }
-                    </div>
-
+                    <Input
+                      id="location"
+                      name="location"
+                      type="select"
+                      onChange={handleOnChange}
+                      value={value.location}
+                    >
+                      {location.map(item => {
+                        return <option key={item.id}>
+                          {item.name}
+                        </option>
+                      })}
+                    </Input>
+                  </FormGroup>
+                </Col>
+                <Col xs={12} md="4">
+                  <FormGroup>
+                    <Label for="linkNews">
+                      Link bài viết gốc
+                    </Label>
+                    <Input
+                      id="linkNews"
+                      name="linkNews"
+                      type="text"
+                      onChange={handleOnChange}
+                      value={value.linkNews}
+                    />
+                  </FormGroup>
+                </Col>
+                <Col xs={12} md="4">
+                  <FormGroup>
+                    <Label for="logoNews">
+                      Link logo báo
+                    </Label>
+                    <Input
+                      id="logoNews"
+                      name="logoNews"
+                      type="text"
+                      onChange={handleOnChange}
+                      value={value.logoNews}
+                    />
                   </FormGroup>
                 </Col>
               </Row>
-            }
 
-            <Row>
-              <Col xs={12} md={4} >
-                <Row>
-                  <Col> <FormGroup className='flex-fill'>
-                    <Label for="title">
-                      Tiêu đề bài viết
+
+              <Row>
+                <Col xs={12} md={6}>
+                  <FormGroup>
+                    <Label for="category">
+                      Chọn chuyên mục
                     </Label>
                     <Input
-                      id="title"
-                      name="title"
-                      type="text"
+                      id="category"
+                      name="category"
+                      type="select"
                       onChange={handleOnChange}
+                      value={value.category}
+                    >
+                      {category.map(item => {
+                        return <option key={item.id}>
+                          {item.name}
+                        </option>
+                      })}
+                    </Input>
+                  </FormGroup>
+                </Col>
+                <Col xs={12} md={6} className='d-flex align-items-end'>
+                  <FormGroup className='flex-fill'>
+                    <Label for="tag">
+                      Nhập tên tag
+                    </Label>
+                    <Input
+                      id="tag"
+                      name="tag"
+                      type="text"
+                      onChange={handleChangeTag}
+                      invalid={isErrorTag}
+                      value={tag}
+                      ref={tagInputRef}
                     />
                   </FormGroup>
-                  </Col>
-                </Row>
-                <Row>
+                  <Button className='mb-3 ml-2' color="primary" onClick={handleAddTag}>Thêm</Button>
+                </Col>
+              </Row>
+
+              {
+                tagList.length !== 0 && <Row>
                   <Col>
                     <FormGroup>
-                      <Label for="avatar">
-                        Ảnh đại diện
+                      <Label>
+                        Tag đã nhập (Tối đa 5 tag)
                       </Label>
-                      <Input
-                        id="avatar"
-                        name="avatar"
-                        type="file"
-                        accept="image/png, image/gif, image/jpeg"
-                        onChange={handleOnChangeImage}
-                      />
+                      <div>
+                        {
+                          tagList.map(item => {
+                            return <ButtonTag key={item.id} name={item.tag} id={item.id} onDelete={(id) => handleDelete(id)} />
+                          })
+                        }
+                      </div>
+
                     </FormGroup>
                   </Col>
                 </Row>
-              </Col>
-              <Col xs={12} md={8}>
-                <FormGroup>
-                  <Label for="shortDes">
-                    Tóm tắt nội dung
-                  </Label>
-                  <Input
-                    id="shortDes"
-                    name="shortDes"
-                    type="textarea"
-                    style={{ minHeight: "124px" }}
-                    onChange={handleOnChange}
-                  />
-                </FormGroup>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <FormGroup>
-                  <Label for="content">
-                    Nội dung chính
-                  </Label>
-                  <EditorField onEditorStateChange={getDetailEditor} />
-                </FormGroup>
-              </Col>
-            </Row>
+              }
 
-            <Row>
-              <Col xs={12}
-              >
-                <Button className='w-100' color="primary" >Thêm bài viết</Button>
-              </Col>
-            </Row>
-          </Form>
+              <Row>
+                <Col xs={12} md={4} >
+                  <Row>
+                    <Col> <FormGroup className='flex-fill'>
+                      <Label for="title">
+                        Tiêu đề bài viết
+                      </Label>
+                      <Input
+                        id="title"
+                        name="title"
+                        type="text"
+                        onChange={handleOnChange}
+                        value={value.title}
+                      />
+                    </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <FormGroup>
+                        <Label for="avatar">
+                          Ảnh đại diện
+                        </Label>
+                        <Input
+                          id="avatar"
+                          name="avatar"
+                          type="file"
+                          accept="image/png, image/gif, image/jpeg"
+                          onChange={handleOnChangeImage}
+                          ref={fileRef}
+                        />
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                </Col>
+                <Col xs={12} md={8}>
+                  <FormGroup>
+                    <Label for="shortDes">
+                      Tóm tắt nội dung
+                    </Label>
+                    <Input
+                      id="shortDes"
+                      name="shortDes"
+                      type="textarea"
+                      style={{ minHeight: "124px" }}
+                      onChange={handleOnChange}
+                      value={value.shortDes}
+                    />
+                  </FormGroup>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <FormGroup>
+                    <Label for="content">
+                      Nội dung chính
+                    </Label>
+                    <EditorField onEditorStateChange={getDetailEditor} value={value.content} />
+                  </FormGroup>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col xs={12}
+                >
+                  <Button className='w-100' color="primary" >Thêm bài viết</Button>
+                </Col>
+              </Row>
+            </Form>
 
 
-        </div>
-      </Col>
-    </Row>
+          </div>
+        </Col>
+      </Row>
+    }
   </>;
 }
 

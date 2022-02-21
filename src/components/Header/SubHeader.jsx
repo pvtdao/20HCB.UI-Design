@@ -25,10 +25,7 @@ function SubHeader(props) {
   const handleLogOut = () => {
     setIsLoggedIn('false')
     localStorage.setItem("isLoggedIn", false)
-    localStorage.removeItem("email")
-    localStorage.removeItem("role")
-    localStorage.removeItem("full_name")
-    localStorage.removeItem("@id")
+    localStorage.removeItem("@user")
   }
   return (
     <div className='subHeader'>
@@ -44,20 +41,20 @@ function SubHeader(props) {
                 <div className='menu'>
                   <div className="d-flex align-items-center min-w-180">
                     <img className='menu__ava mt-1' src="https://toppng.com/uploads/preview/roger-berry-avatar-placeholder-11562991561rbrfzlng6h.png" alt="avatar" />
-                    <p className='menu__name'>{localStorage.getItem('full_name') || "unknown"}</p>
+                    <p className='menu__name'>{JSON.parse(localStorage.getItem('@user'))["full_name"] || "unknown"}</p>
                   </div>
 
                   <div className="menu__item">
                     <p className='menu__item-link' onClick={() => navigate('/account')}>Tài khoản</p>
-                    {localStorage.getItem('role') === 'writer' || localStorage.getItem('role') === 'admin' ?
+                    {JSON.parse(localStorage.getItem('@user'))["role"] === 'writer' || JSON.parse(localStorage.getItem('@user'))["role"] === 'admin' ?
                       <p className='menu__item-link'>Quản lý bài báo</p>
                       : ""
                     }
-                    {localStorage.getItem('role') === 'admin' ?
+                    {JSON.parse(localStorage.getItem('@user'))["role"] === 'admin' ?
                       <p className='menu__item-link'>Quản lý</p>
                       : ""
                     }
-                    {localStorage.getItem('role') === 'editor' ?
+                    {JSON.parse(localStorage.getItem('@user'))["role"] === 'editor' ?
                       <p className='menu__item-link'>Quản lý bài báo</p>
                       : ""
                     }

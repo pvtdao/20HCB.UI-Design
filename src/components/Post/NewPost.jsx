@@ -1,9 +1,11 @@
 import React from 'react';
 import { Badge, Col, Container, Row } from 'reactstrap';
 import CommonPost from './CommonPost';
-import { newPost } from '../../fakeData/news'
+import { newPosts } from '../../fakeData/newPost';
 
 function NewPost(props) {
+    const new_post = JSON.parse(localStorage.getItem('new_posts')) ?? newPosts;
+    console.log("abc: ", new_post)
     return (
         <div className="newPost mt-5">
             <Container >
@@ -17,7 +19,7 @@ function NewPost(props) {
                     </Col>
                 </Row>
                 <Row>
-                    {newPost.map(item => {
+                    {new_post.filter(item => item.status !== "Đang chờ duyệt").slice(0, 8).map(item => {
                         return (
                             <Col lg={3} className='mt-4-5' key={item.slug}>
                                 <CommonPost news={item} />

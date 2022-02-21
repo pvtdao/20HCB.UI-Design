@@ -1,7 +1,7 @@
 import React from 'react';
 import { Badge, Col, Row } from 'reactstrap';
 import SubPost2 from '../Post/SubPost2';
-import { fastNews } from '../../fakeData/news'
+import { fastNews } from '../../fakeData/fastNews'
 function FastNews(props) {
   return (
     <div className='fastNews'>

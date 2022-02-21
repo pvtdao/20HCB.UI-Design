@@ -10,13 +10,13 @@ function CommonPost({ news = {} }) {
     return (
         <div className='commonPost' onClick={directDetail}>
             <div className="commonPost__img" style={{
-                backgroundImage: `url("${news.mainImage}")`
+                backgroundImage: `url("${news.avatar?.src}")`
             }}></div>
             <div className="commonPost__title">{news.title}</div>
             <div className="commonPost__info d-flex flex-row">
                 <p className="commonPost__info-time d-flex align-items-center"><span>1 giờ trước</span></p>
                 <div className='flex-fill d-flex justify-content-end'>
-                    <img className="commonPost__info-img" src={news.rootLogo} alt='logo post' />
+                    <img className="commonPost__info-img" src={news.logoNews} alt='logo post' />
                 </div>
             </div>
         </div>

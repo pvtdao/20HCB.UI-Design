@@ -6,10 +6,11 @@ function SubPost2({ news }) {
     function directDetail() {
         navigate(`/detail/${news.slug}`)
     }
+
     return (
         <div className='subPost2 d-flex' onClick={directDetail}>
             <div className="subPost2__img" style={{
-                backgroundImage: `url("${news.mainImage}")`
+                backgroundImage: `url("${news.avatar.src}")`
             }}></div>
             <div className='subPost2__info flex-column d-flex justify-content-start mb-1'>
                 <div className='d-flex  justify-content-start'>
@@ -19,11 +20,9 @@ function SubPost2({ news }) {
                 </div>
                 <div className="subPost2__title">{news.title}</div>
                 <div className='flex-fill d-flex justify-content-start'>
-                    <img className="subPost2__info-img" src={news.rootLogo} alt='logo post' />
+                    <img className="subPost2__info-img" src={news.logoNews} alt='logo post' />
                 </div>
             </div>
-
-
         </div>
     );
 }

@@ -3,16 +3,21 @@ import { Breadcrumb, BreadcrumbItem, Button, Col, Container, Form, Input, Row } 
 import Comment from '../Comment';
 import FastNews from '../FastNews';
 import { totalNews } from '../../fakeData/news'
+import { allPost } from '../../fakeData/allPost'
 import { useParams } from 'react-router-dom'
 import RelateTag from '../RelateTag';
-import { allPost } from '../../fakeData/allPost';
 
 function Detail(props) {
   const { newsSlug } = useParams()
 
-  // const detail = totalNews.filter(item => item.slug === newsSlug)[0]
-  // const detail = JSON.parse(localStorage.getItem("new_post"))
-  const detail = allPost[3]
+  const all_post = JSON.parse(localStorage.getItem("all_post")) ?? allPost
+
+  const detail = all_post.filter(item => item.slug === newsSlug)[0]
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [newsSlug])
+
   console.log("detail: ", detail)
   return (
     <div className='detail mt-4'>
