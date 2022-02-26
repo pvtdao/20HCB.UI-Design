@@ -11,10 +11,10 @@ function Comment({ comment }) {
                 <Col lg={11}>
                     <div className="d-flex align-items-center">
                         <p className='comment__user mr-3'>{comment.userName}</p>
-                        <p className="comment__time">14:39 20/12</p>
+                        <p className="comment__time">{comment?.hours}:{comment?.minute} {comment?.date}/{comment?.month}</p>
                     </div>
 
-                    <p className='comment__content'>{comment.commentText}</p>
+                    <p className='comment__content'>{comment.comment}</p>
                 </Col>
             </Row>
         </div >

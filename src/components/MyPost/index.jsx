@@ -6,11 +6,14 @@ import { totalNews } from '../../fakeData/news'
 import { allPost } from '../../fakeData/allPost'
 import { RiDeleteBack2Line } from "react-icons/ri";
 import { useNavigate } from 'react-router-dom';
+import Loader from '../Loader';
 
 function MyPost(props) {
   const navigate = useNavigate()
 
   const [filterValue, setFilterValue] = useState("")
+  const [isLoad, setIsLoad] = React.useState(true);
+
   const all_post = JSON.parse(localStorage.getItem("all_post")) ?? allPost
 
   const myNews = all_post.filter(news => news.author === JSON.parse(localStorage.getItem(`@user`))["full_name"])
@@ -20,6 +23,12 @@ function MyPost(props) {
     navigate(`/account/new-post`)
   }
 
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setIsLoad(false);
+    }, 1500);
+  }, [isLoad])
 
   const renderHeaderTable = () => {
     return (
@@ -74,45 +83,49 @@ function MyPost(props) {
 
   return (
     <>
-      <Row className='mt-2'>
-        <Col>
-          <InputGroup>
-            <Button color='light' className='border btn-lg'>
-              <AiOutlineSearch />
-            </Button>
-            <Input bsSize='lg' className='ml-3' placeholder='Tìm kiếm...' value={filterValue} onChange={handleChange} />
-            <Button color='light' className='border btn-lg'>
-              <RiDeleteBack2Line onClick={() => setFilterValue("")} />
-            </Button>
-          </InputGroup>
-        </Col>
-      </Row>
+      {isLoad ? <Loader /> :
+        <>
+          <Row className='mt-2'>
+            <Col>
+              <InputGroup>
+                <Button color='light' className='border btn-lg'>
+                  <AiOutlineSearch />
+                </Button>
+                <Input bsSize='lg' className='ml-3' placeholder='Tìm kiếm...' value={filterValue} onChange={handleChange} />
+                <Button color='light' className='border btn-lg'>
+                  <RiDeleteBack2Line onClick={() => setFilterValue("")} />
+                </Button>
+              </InputGroup>
+            </Col>
+          </Row>
 
-      <Row className='mt-3 ' style={{ minHeight: '85vh' }}>
-        <Col>
-          <div className="myPosts pd-5" style={{
-            backgroundColor: 'rgba(255, 255, 255, 0.66)', minHeight: '100%'
-          }}>
-            <div className="d-flex align-items-center justify-content-between">
-              <h5 className='mg-0'>Bài viết</h5>
-              <Button className='btn-sm' color='primary' onClick={directCreatePost}>Thêm bài viết</Button>
-            </div>
+          <Row className='mt-3 ' style={{ minHeight: '85vh' }}>
+            <Col>
+              <div className="myPosts pd-5" style={{
+                backgroundColor: 'rgba(255, 255, 255, 0.66)', minHeight: '100%'
+              }}>
+                <div className="d-flex align-items-center justify-content-between">
+                  <h5 className='mg-0'>Bài viết</h5>
+                  <Button className='btn-sm' color='primary' onClick={directCreatePost}>Thêm bài viết</Button>
+                </div>
 
-            <Table
-              hover
-              borderless
-              size="sm"
-              // striped
-              className='mt-3 bg-fff'
-              bordered
-              responsive
-            >
-              {renderHeaderTable()}
-              {renderBodyTable()}
-            </Table>
-          </div>
-        </Col>
-      </Row>
+                <Table
+                  hover
+                  borderless
+                  size="sm"
+                  // striped
+                  className='mt-3 bg-fff'
+                  bordered
+                  responsive
+                >
+                  {renderHeaderTable()}
+                  {renderBodyTable()}
+                </Table>
+              </div>
+            </Col>
+          </Row>
+        </>
+      }
     </>
   );
 }

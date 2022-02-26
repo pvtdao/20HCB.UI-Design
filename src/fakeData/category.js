@@ -17,7 +17,7 @@ export const category = [
   },
   {
     id: '5',
-    name: 'Khám Phá',
+    name: 'Thời Sự',
   },
   {
     id: '6',

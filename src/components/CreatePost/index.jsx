@@ -239,7 +239,7 @@ function CreatePost(props) {
                 <Col xs={12} md="4">
                   <FormGroup>
                     <Label for="logoNews">
-                      Link logo báo
+                      Logo báo
                     </Label>
                     <Input
                       id="logoNews"

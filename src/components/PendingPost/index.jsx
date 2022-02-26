@@ -13,7 +13,7 @@ function PendingPost(props) {
   const navigate = useNavigate()
 
   const [filterValue, setFilterValue] = useState('');
-  const [isLoad, setIsLoad] = React.useState(false);
+  const [isLoad, setIsLoad] = React.useState(true);
 
 
   const all_post = JSON.parse(localStorage.getItem("all_post")) ?? allPost
